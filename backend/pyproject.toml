@@ -1,0 +1,8 @@
+[project]
+name = "mashhad-roadside-backend"
+version = "0.1.0"
+description = "Django API and CMS backend for Mashhad Roadside Assistance"
+requires-python = ">=3.12,<3.15"
+
+[tool.vercel.scripts]
+build = "python manage.py collectstatic --noinput"

@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-50: #fef2f2;
+  --color-brand-100: #fee2e2;
+  --color-brand-200: #fecaca;
+  --color-brand-300: #fca5a5;
+  --color-brand-400: #f87171;
+  --color-brand-500: #ef4444;
+  --color-brand-600: #dc2626;
+  --color-brand-700: #b91c1c;
+  --color-brand-800: #991b1b;
+  --color-brand-900: #7f1d1d;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); }
+
+::selection { background: #dc2626; color: #fff; }
+
+.skip-link { transform: translateY(-150%); }
+.skip-link:focus { transform: translateY(0); }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+.hero-grid { background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 44px 44px; }
+
+.vehicle-glow { box-shadow: 0 0 100px rgba(220,38,38,.18); }
+
+.service-card, .problem-card, .blog-card, .testimonial-card { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.service-card:hover, .problem-card:hover, .blog-card:hover, .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 18px 45px rgba(0,0,0,.08); }
+
+.mobile-bar { padding-bottom: env(safe-area-inset-bottom); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
